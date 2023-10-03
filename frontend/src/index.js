@@ -9,6 +9,7 @@ import './styles/fonts.css'
 import './styles/variables.css'
 import './styles/helpers.css'
 import './styles/defaults.css'
+import './styles/custom-swiper.css'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -3,7 +3,7 @@ import CircleSpinner from "../CircleSpinner/CircleSpinner";
 
 import "./CourseBox.css";
 
-export default function CourseBox() {
+export default function CourseBox(props) {
 
   const [isImgShow, setIsImgShow] = useState(false)
 
@@ -14,7 +14,7 @@ export default function CourseBox() {
   }
 
   return (
-    <div className="col-4">
+    <div className="col-4" style={{width : props.inSlider && "100%"}}>
       <div className="course-box">
         <a href="##">
           <img
