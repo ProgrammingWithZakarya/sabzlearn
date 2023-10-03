@@ -12,3 +12,7 @@
 .swiper-pagination-bullet-active {
     background: #17692e !important
 }
+.swal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
