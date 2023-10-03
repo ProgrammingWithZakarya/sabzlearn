@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 
 import "./Topbar.css";
 import Button from "../Form/Button";
 
-export default function Topbar() {
+export default memo(function Topbar() {
   const [allTopbarLinks, setAllTopbarLinks] = useState([])
   useEffect(() => {
     fetch("http://localhost:4000/v1/menus/topbar")
@@ -22,11 +22,11 @@ export default function Topbar() {
       .catch(err => console.log(err))
   }, [])
   const getRandomItemsFromArray = (arr, count) => {
-    if(!arr.length === 0){
+    if (!arr.length === 0) {
       const shuffled = [...arr].sort(() => 0.5 - Math.random())
       return shuffled.slice(0, count)
     } else {
-      return [{_id:"undefined"  , title :"صفحه بدرستی بارگذاری نشده است!" ,href :"/"  }]
+      return [{ _id: "undefined", title: "صفحه بدرستی بارگذاری نشده است!", href: "/" }]
     }
   }
   return (
@@ -65,3 +65,4 @@ export default function Topbar() {
     </div>
   );
 }
+)

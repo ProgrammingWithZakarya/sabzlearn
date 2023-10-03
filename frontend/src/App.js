@@ -10,12 +10,12 @@ export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [token, setToken] = useState(null);
   const [userInfos, setUserInfos] = useState(null);
-  const login = useCallback((user, token) => {
+  const login = (user, token) => {
     setToken(token);
     setIsLoggedIn(true)
     setUserInfos(user)
     localStorage.setItem("user", JSON.stringify(token))
-  }, [])
+  }
   const logout = useCallback(() => {
     setUserInfos({})
     setToken(null)
@@ -41,12 +41,12 @@ export default function App() {
           setIsLoggedIn(true);
           setUserInfos(userData)
         })
-        .catch(err =>{
+        .catch(err => {
           console.error('app.js =>', err);
           swal({
-            title : "متاسفانه پایگاه داده با مشکل مواجه شد!",
-            buttons:["ولش کن" , 'بارگذاری دوباره'],
-            icon :"warning"
+            title: "متاسفانه پایگاه داده با مشکل مواجه شد!",
+            buttons: ["ولش کن", 'بارگذاری دوباره'],
+            icon: "warning"
           }).then(key => {
             if (key) {
               window.location.reload()
