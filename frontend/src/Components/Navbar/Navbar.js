@@ -9,135 +9,137 @@ export default function Navbar() {
       <div className="container-fluid">
         <div className="main-header__content">
           <div className="main-header__right">
+            <Button to='/'>
             <img
               src="/images/logo/Logo.png"
               className="main-header__logo"
               alt="لوگوی سبزلرن"
-            />
+              />
+              </Button>
             <ul className="main-header__menu">
               <li className="main-header__item">
-                <a href="##" className="main-header__link">
+                <Button to="/" className="main-header__link">
                   صفحه اصلی
-                </a>
+                </Button>
               </li>
               <li className="main-header__item">
-                <a href="##" className="main-header__link">
+                <Button to="/course-info/frontend" className="main-header__link">
                   فرانت اند
                   <i className="fas fa-angle-down main-header__link-icon"></i>
                   <ul className="main-header__dropdown">
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/html-course" className="main-header__dropdown-link">
                         آموزش Html
-                      </a>
+                      </Button>
                     </li>
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/css-course" className="main-header__dropdown-link">
                         آموزش Css
-                      </a>
+                      </Button>
                     </li>
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/js-course" className="main-header__dropdown-link">
                         آموزش جاوا اسکریپت
-                      </a>
+                      </Button>
                     </li>
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/flexbox-course" className="main-header__dropdown-link">
                         آموزش FlexBox
-                      </a>
+                      </Button>
                     </li>
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/reactJS-course" className="main-header__dropdown-link">
                         آموزش جامع ری‌اکت
-                      </a>
+                      </Button>
                     </li>
                   </ul>
-                </a>
+                </Button>
               </li>
               <li className="main-header__item">
-                <a href="##" className="main-header__link">
+                <Button to="/course-info/security" className="main-header__link">
                   امنیت
                   <i className="fas fa-angle-down main-header__link-icon"></i>
                   <ul className="main-header__dropdown">
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/linux-course" className="main-header__dropdown-link">
                         آموزش کالی لینوکس
-                      </a>
+                      </Button>
                     </li>
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/blackPython-course" className="main-header__dropdown-link">
                         آموزش پایتون سیاه
-                      </a>
+                      </Button>
                     </li>
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/balckJS-course" className="main-header__dropdown-link">
                         آموزش جاوا اسکریپت سیاه
-                      </a>
+                      </Button>
                     </li>
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/network-course" className="main-header__dropdown-link">
                         آموزش شبکه
-                      </a>
+                      </Button>
                     </li>
                   </ul>
-                </a>
+                </Button>
               </li>
               <li className="main-header__item">
-                <a href="##" className="main-header__link">
+                <Button to="/articles" className="main-header__link">
                   مقالات
                   <i className="fas fa-angle-down main-header__link-icon"></i>
                   <ul className="main-header__dropdown">
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/webDevelopment-article" className="main-header__dropdown-link">
                         توسعه وب
-                      </a>
+                      </Button>
                     </li>
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/JS-articles" className="main-header__dropdown-link">
                         جاوا اسکریپت
-                      </a>
+                      </Button>
                     </li>
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/aboutFrontEnd-article" className="main-header__dropdown-link">
                         فرانت اند
-                      </a>
+                      </Button>
                     </li>
                   </ul>
-                </a>
+                </Button>
               </li>
               <li className="main-header__item">
-                <a href="##" className="main-header__link">
+                <Button to="/course-info/python" className="main-header__link">
                   پایتون
                   <i className="fas fa-angle-down main-header__link-icon"></i>
                   <ul className="main-header__dropdown">
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/expressPython-course" className="main-header__dropdown-link">
                         دوره متخصص پایتون
-                      </a>
+                      </Button>
                     </li>
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/AIWithPython-course" className="main-header__dropdown-link">
                         دوره هوش مصنوعی با پایتون
-                      </a>
+                      </Button>
                     </li>
                     <li className="main-header__dropdown-item">
-                      <a href="##" className="main-header__dropdown-link">
+                      <Button to="/course-info/expert-django-course" className="main-header__dropdown-link">
                         دوره متخصص جنگو
-                      </a>
+                      </Button>
                     </li>
                   </ul>
-                </a>
+                </Button>
               </li>
               <li className="main-header__item">
-                <a href="##" className="main-header__link">
+                <Button to="/course-info/softSkills" className="main-header__link">
                   مهارت های نرم
-                </a>
+                </Button>
               </li>
             </ul>
           </div>
           <div className="main-header__left">
-            <a href="##" className="main-header__search-btn">
+            <Button to="/" className="main-header__search-btn">
               <i className="fas fa-search main-header__search-icon"></i>
-            </a>
+            </Button>
             <Button to='/cart' className="main-header__cart-btn">
               <i className="fas fa-shopping-cart main-header__cart-icon"></i>
             </Button>
