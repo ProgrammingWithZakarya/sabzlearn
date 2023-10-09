@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../../Components/Footer/Footer";
 import Button from "../../Components/Form/Button";
 import Input from "../../Components/Form/Input";
-import Navbar from "../../Components/Navbar/Navbar";
 import Topbar from "../../Components/Topbar/Topbar";
 import {
   requiredValidator,
@@ -14,6 +12,7 @@ import {
 import "./../../styles/FormPage.css";
 import { useForm } from "../../Hooks/useForm";
 import AuthContext from "../../context/authContext";
+import swal from "sweetalert";
 export default function Register() {
   const authContext = useContext(AuthContext)
   const [formState, onInputHandler] = useForm(
@@ -62,7 +61,13 @@ export default function Register() {
           return res.text().then(text => {
             throw new Error(text)
           })
-        } else {
+        } else if(res.status === 403) {
+          swal({
+            icon : "error",
+            title : "متاسفانه این شماره مسدود میباشد!",
+            buttons :"ای بابا"
+          })
+        } else if(res.ok){
           console.log('res =>', res)
           return res.json()
         }
