@@ -3,7 +3,7 @@ import React, { memo, useEffect, useState } from "react";
 import "./Topbar.css";
 import Button from "../Form/Button";
 
-export default memo(function Topbar() {
+export default memo(function Topbar({eamil , phone}) {
   const [allTopbarLinks, setAllTopbarLinks] = useState([])
   useEffect(() => {
     fetch("http://localhost:4000/v1/menus/topbar")
