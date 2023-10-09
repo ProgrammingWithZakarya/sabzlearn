@@ -23,7 +23,7 @@ export default function Navbar() {
                 </Button>
               </li>
               <li className="main-header__item">
-                <Button to="/course-info/frontend" className="main-header__link">
+                <Button to="/category-info/frontend" className="main-header__link">
                   فرانت اند
                   <i className="fas fa-angle-down main-header__link-icon"></i>
                   <ul className="main-header__dropdown">
@@ -56,7 +56,7 @@ export default function Navbar() {
                 </Button>
               </li>
               <li className="main-header__item">
-                <Button to="/course-info/security" className="main-header__link">
+                <Button to="/category-info/security" className="main-header__link">
                   امنیت
                   <i className="fas fa-angle-down main-header__link-icon"></i>
                   <ul className="main-header__dropdown">
@@ -84,7 +84,7 @@ export default function Navbar() {
                 </Button>
               </li>
               <li className="main-header__item">
-                <Button to="/articles" className="main-header__link">
+                <Button to="/article-info/all" className="main-header__link">
                   مقالات
                   <i className="fas fa-angle-down main-header__link-icon"></i>
                   <ul className="main-header__dropdown">
@@ -107,7 +107,7 @@ export default function Navbar() {
                 </Button>
               </li>
               <li className="main-header__item">
-                <Button to="/course-info/python" className="main-header__link">
+                <Button to="/category-info/python" className="main-header__link">
                   پایتون
                   <i className="fas fa-angle-down main-header__link-icon"></i>
                   <ul className="main-header__dropdown">
@@ -130,7 +130,7 @@ export default function Navbar() {
                 </Button>
               </li>
               <li className="main-header__item">
-                <Button to="/course-info/softSkills" className="main-header__link">
+                <Button to="/category-info/softSkills" className="main-header__link">
                   مهارت های نرم
                 </Button>
               </li>
