@@ -1,0 +1,6 @@
+.hasBeenAnswered{
+    background: radial-gradient(circle , #2bce56 1%, rgba(0,0,0,0) 30%);
+}
+.notAnswered {
+    background: radial-gradient(circle , red 1%, rgba(0,0,0,0) 30%);
+}
