@@ -15,7 +15,8 @@ export default function Category() {
   const [orderedCourses, setOrderedCourses] = useState([])
   const [status, setStatus] = useState('')
   const { categoryName } = useParams()
-  const [searchValue , setSearchValue] = useState('')
+  const [searchValue, setSearchValue] = useState('')
+  const [courseDisplayType, setCourseDisplayType] = useState('row')
   useEffect(() => {
     fetch(`http://localhost:4000/v1/courses/category/${categoryName}`)
       .then(res => {
@@ -49,7 +50,7 @@ export default function Category() {
       setOrderedCourses(courses)
     } else if (status === 'free') {
       setOrderedCourses(courses.filter(course => course.price === 0))
-    } else if (status === 'money') {  
+    } else if (status === 'money') {
       setOrderedCourses(courses.filter(course => course.price !== 0))
     }
   }, [status])
@@ -66,10 +67,10 @@ export default function Category() {
         <div className="container">
           <div className="courses-top-bar">
             <div className="courses-top-bar__right">
-              <div className="courses-top-bar__row-btn courses-top-bar__icon--active">
+              <div className={`courses-top-bar__row-btn ${courseDisplayType === 'row' && 'courses-top-bar__icon--active'}`} onClick={() => setCourseDisplayType('row')}>
                 <i className="fas fa-border-all courses-top-bar__icon"></i>
               </div>
-              <div className="courses-top-bar__column-btn">
+              <div className={`courses-top-bar__column-btn ${courseDisplayType === 'column' && 'courses-top-bar__icon--active'}`} onClick={() => setCourseDisplayType('column')}>
                 <i className="fas fa-align-left courses-top-bar__icon"></i>
               </div>
               <div className="courses-top-bar__selection">
@@ -148,9 +149,90 @@ export default function Category() {
                     </div>
                   ) : (
                     <>
-                      <CourseBox />
-                      <CourseBox />
-                      <CourseBox />
+
+                      {
+                        courseDisplayType === 'row' ? (
+                          <>
+                            <CourseBox />
+                            <CourseBox />
+                            <CourseBox />
+                          </>) : (
+                          <>
+
+                            <>
+                              {[1,2,3,4,5].map((course) => (
+                                <div class="col-12">
+                                  <div class="course-box">
+                                    <div class="course__box-header">
+                                      <div class="course__box-right">
+                                        <a
+                                          class="course__box-right-link"
+                                          href="#"
+                                        >
+                                          <img
+                                            src="/images/courses/fareelancer.png"
+                                            class="course__box-right-img"
+                                          />
+                                        </a>
+                                      </div>
+                                      <div class="course__box-left">
+                                        <div class="course__box-left-top">
+                                          <a
+                                            href="#"
+                                            class="course__box-left-link"
+                                          >
+                                            دوره پروژه محور متخصص جنگو
+                                          </a>
+                                        </div>
+                                        <div class="course__box-left-center">
+                                          <div class="course__box-left-teacher">
+                                            <i class="course__box-left-icon fa fa-chalkboard-teacher"></i>
+                                            <span class="course__box-left-name">
+                                              محمد امین سعیدی راد
+                                            </span>
+                                          </div>
+                                          <div class="course__box-left-stars">
+                                            <span class="course__box-left-star">
+                                              <img src="/images/svgs/star_fill.svg" />
+                                            </span>
+                                            <span class="course__box-left-star">
+                                              <img src="/images/svgs/star_fill.svg" />
+                                            </span>
+                                            <span class="course__box-left-star">
+                                              <img src="/images/svgs/star_fill.svg" />
+                                            </span>
+                                            <span class="course__box-left-star">
+                                              <img src="/images/svgs/star_fill.svg" />
+                                            </span>
+                                            <span class="course__box-left-star">
+                                              <img src="/images/svgs/star_fill.svg" />
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div class="course__box-left-bottom">
+                                          <div class="course__box-left-des">
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد،...</p>
+                                          </div>
+                                        </div>
+                                        <div class="course__box-footer">
+                                          <div class="course__box-footer-right">
+                                            <i class="course__box-footer-icon fa fa-users"></i>
+                                            <span class="course__box-footer-count">
+                                              202
+                                            </span>
+                                          </div>
+                                          <span class="course__box-footer-left">
+                                            1,000,000
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
+                            </>
+                          </>)
+                      }
                     </>
                   )
                 }
