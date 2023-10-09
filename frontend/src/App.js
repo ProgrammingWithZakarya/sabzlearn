@@ -5,13 +5,12 @@ import AuthContext from './context/authContext'
 import './App.css'
 import swal from 'sweetalert'
 export default function App() {
-
   const router = useRoutes(routes)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [token, setToken] = useState(null);
   const [userInfos, setUserInfos] = useState(null);
-  const login = (user, token) => {
-    setToken(token);
+  const login = (user, tokenInput) => {
+    setToken(tokenInput);
     setIsLoggedIn(true)
     setUserInfos(user)
     localStorage.setItem("user", JSON.stringify(token))
@@ -55,8 +54,10 @@ export default function App() {
             }
           })
         })
+    } else {
+      setIsLoggedIn(false)
     }
-  }, [login])
+  }, [login , logout])
   return (
     <AuthContext.Provider value={{
       isLoggedIn,
