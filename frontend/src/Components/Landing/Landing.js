@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
 import LandingCounter from "../LandingCounter/LandingCounter";
 
 import "./Landing.css";
+import { useNavigate, useParams } from "react-router-dom";
 
-export default function Landing() {
-
+export default function Landing({courseCount , totalTime , usersCount}) {
+  const [searchValue, setSearchValue] = useState('')
+  const navigate = useNavigate()
+  const goToSearchPage = (e) => {
+    e.preventDefault()
+    navigate(`/search/${searchValue}`)
+  }
   return (
     <section className="landing">
       <div className="container">
@@ -34,8 +40,10 @@ export default function Landing() {
             type="text"
             className="landing__searchbar-input"
             placeholder="چه چیزی دوست داری یاد بگیری ..."
+            value={searchValue}
+            onChange={e => setSearchValue(e.target.value)}
           />
-          <button className="landing__searchbar-btn" type="submit">
+          <button className="landing__searchbar-btn" type="submit" onClick={goToSearchPage}>
             <i className="fas fa-search landing__searchbar-icon"></i>
           </button>
         </div>
