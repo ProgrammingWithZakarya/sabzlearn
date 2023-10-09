@@ -42,11 +42,11 @@ export default function Input(props) {
   };
 
   const element =
-    props.element === "input" ? (
+    props.element !== "textarea" ? (
       <input
         type={props.type}
         placeholder={props.placeholder}
-        className={`${props.className} ${mainInput.isValid ? "success" : "error"
+        className={`${props.className} ${mainInput.isValid ? "inputIsValid" : "inputInValid"
           }`}
         value={mainInput.value}
         onChange={onChangeHandler}
@@ -54,7 +54,7 @@ export default function Input(props) {
     ) : (
       <textarea
         placeholder={props.placeholder}
-        className={`${props.className} ${mainInput.isValid ? "success" : "error"
+        className={`${props.className} ${mainInput.isValid ? "inputIsValid" : "inputInValid"
           }`}
         onChange={onChangeHandler}
         value={mainInput.value}
